@@ -18,7 +18,7 @@ public class Login extends OKCityAbsPageV2 {
 	
 	public Login(){
 		loginBizDriver=LGinjector.INSTANCE.getLoginBizDriver();
-		loginView=LGinjector.INSTANCE.getLoginView();
+		loginView=LGinjector.INSTANCE.getLoginView();111
 	}
 	@Override
 	public IBizDriver getBizDriver() {
