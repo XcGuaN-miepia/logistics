@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='Base'>
+	<inherits name='com.google.gwt.user.User' />
+	<inherits name="cn.xiaobu.web.citybeauty.beauty" />
+	<inherits name="com.google.gwt.i18n.I18N" />
+	<inherits name='com.google.gwt.user.theme.standard.Standard' />
+	<inherits name='cn.zzt.graduation.logistics.client.theme.Flex'></inherits>
+	
+	<source path='client' />
+	<source path='shared' />
+</module>

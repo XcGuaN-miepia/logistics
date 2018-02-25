@@ -1,0 +1,7 @@
+<module>
+	<replace-with
+		class="cn.zzt.graduation.logistics.client.theme.FlexDefaultAppearance">
+		<when-type-is
+			class="cn.zzt.graduation.logistics.client.theme.FlexAppearance" />
+	</replace-with>
+</module>

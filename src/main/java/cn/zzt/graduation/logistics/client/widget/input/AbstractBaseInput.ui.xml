@@ -1,0 +1,44 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:btn="urn:import:cn.zzt.graduation.logistics.client.widget.button2">
+	<ui:style>
+	.panel {
+		width: 9.2rem;
+		height: 1.493rem;
+		color: #ccc;
+	}
+	
+	.icon {
+		width: 0.9rem;
+		height: 0.9rem;
+		margin-left: 0.345rem;
+	}
+	
+	.inputdiv {
+		height: 100%;
+		overflow: hidden;
+		padding-right: 0.133rem;
+		font-size: 32px;
+	}
+	
+	.inputdiv>input {
+		height: 100%;
+		border: none;
+		background: none;
+		color: #333;
+		text-indent: 0.33rem;
+	}
+	
+	</ui:style>
+	<ui:with type="cn.zzt.graduation.logistics.client.theme.FlexAppearance" field="appearance"></ui:with>
+	<g:FlowPanel
+		addStyleNames="xb_border_bottom ddd {appearance.css.flexH},{appearance.css.flexVC},{style.panel}"
+		ui:field="panel">
+		<g:Image ui:field="image" addStyleNames="{style.icon}" />
+		<g:FlowPanel
+			addStyleNames="{appearance.css.flexH},{appearance.css.flex1},{style.inputdiv}">
+			<g:TextBox ui:field="input" addStyleNames="{appearance.css.flex1}" />
+		</g:FlowPanel>
+		<btn:CloseButton ui:field="deletebtn" />
+	</g:FlowPanel>
+</ui:UiBinder> 

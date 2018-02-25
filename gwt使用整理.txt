@@ -1,0 +1,34 @@
+﻿1、页面没有加载:
+    将函数写成了void；
+
+2、Deferred binding result type 'cn.zzt.graduation.logistics.client.theme.FlexAppearance' should not be abstract
+    自己创建的Flexapperance错误，引用公司的修复成功，bug暂留
+    解决，方法是在写的网页的gwt.xml文件inherits Flex.gwt.xml文件
+
+3、No resource found for key 'PhoneNoInputPlaceHolder'
+    在LMessage文件String上方加上@DefaultMessage("请输入手机号码")
+    未找到为何没有联系上/logistics/src/main/resources/cn/zzt/graduation/logistics/client/LMessages.properties文件的原因
+
+4、tips：类似于图片点击改变图像或者boolean值的，不要用uibinder而是直接用onClickEvent
+
+5、字体不出现
+    html文件没有link fontcss文件
+    
+6、编译之后target文件中打开html文件有的图片不显示
+	控件的java文件中的url最前面多加了/，去掉修复
+	
+7、在浏览器按F12进入开发者工具中选择手机尺寸浏览报错
+	清除一下浏览器的缓存即可修复
+	更改：关闭浏览器重新进入即可
+	
+8、[WARN] 404 - GET /Invite/Invite.nocache.js (127.0.0.1) 1389 bytes
+	排除.gwt.xml文件错误，正在检验是否因为在Invite.java文件中忘记public Invite(){}的原因
+	不是忘写的原因
+	尴尬，应该是.gwt.xml的问题，rename-to忘记改了
+	确定了，就是忘改的原因了
+	
+9、biz没有执行btn的功能
+	biz重写了flushCache方法，之前implements IBizDriver 重写了flushCache
+	
+10、堆栈溢出
+	在map.put()里面put了map，造成了循环
