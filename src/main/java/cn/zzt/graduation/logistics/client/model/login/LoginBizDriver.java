@@ -3,10 +3,12 @@ package cn.zzt.graduation.logistics.client.model.login;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.google.gwt.user.client.Window;
 import com.google.web.bindery.event.shared.HandlerRegistration;
 
 import cn.easysw.mobileframework.client.framework.IBizDriver;
 import cn.easysw.mobileframework.client.framework.IViewPresenter;
+import cn.easysw.mobileframework.client.framework.XGinjector;
 import cn.easysw.mobileframework.client.util.MD5Util;
 import cn.xiaobu.web.citybeauty.client.ajax.AjaxAsyncCallback;
 import cn.xiaobu.web.citybeauty.client.framework.BizDriverAbsImpl;
@@ -28,8 +30,13 @@ public class LoginBizDriver extends BizDriverAbsImpl implements IBizDriver,Login
 
 	@Override
 	public void dispath() {
-		// TODO Auto-generated method stub
-		
+		XGinjector.INSTANCE.getIAjaxHelper().post("/login", null, new AjaxAsyncCallback() {
+			
+			@Override
+			public void onSuccess(String arg0) {
+				Window.alert(arg0);
+			}
+		});		
 	}
 
 	@Override
