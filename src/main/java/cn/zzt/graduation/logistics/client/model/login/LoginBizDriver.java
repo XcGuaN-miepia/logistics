@@ -30,22 +30,14 @@ public class LoginBizDriver extends BizDriverAbsImpl implements IBizDriver,Login
 
 	@Override
 	public void dispath() {
-		System.out.println("aaa");
 
-		XGinjector.INSTANCE.getIAjaxHelper().post("shopping/login", null, new AjaxAsyncCallback() {
+		XGinjector.INSTANCE.getIAjaxHelper().post("/servlet/HelloWorld", null, new AjaxAsyncCallback() {
 			
 			@Override
 			public void onSuccess(String arg0) {
 				Window.alert("false");
 			}
-
-			@Override
-			public void onBizError(Throwable caught) {
-				// TODO Auto-generated method stub
-				Window.alert(caught+"");
-			}
-			
-			
+					
 		});		
 	}
 
