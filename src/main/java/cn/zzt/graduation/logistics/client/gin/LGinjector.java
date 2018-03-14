@@ -1,10 +1,12 @@
 package cn.zzt.graduation.logistics.client.gin;
 
 
+import cn.zzt.graduation.logistics.client.biz.LoginBizDriver;
+import cn.zzt.graduation.logistics.client.biz.LogisticsListBizDriver;
 import cn.zzt.graduation.logistics.client.messages.LMessages;
-import cn.zzt.graduation.logistics.client.model.login.LoginBizDriver;
 import cn.zzt.graduation.logistics.client.theme.FlexAppearance;
 import cn.zzt.graduation.logistics.client.view.login.LoginView;
+import cn.zzt.graduation.logistics.client.view.logisticslist.LogisticsListView;
 
 import com.google.gwt.core.shared.GWT;
 import com.google.gwt.inject.client.GinModules;
@@ -22,6 +24,9 @@ public interface LGinjector extends Ginjector{
 	
 	LoginView getLoginView();
 	LoginBizDriver getLoginBizDriver();
+	
+	LogisticsListView getLogisticsListView();
+	LogisticsListBizDriver getLogisticsListBizDriver();
 	
 	LMessages getLMessages();
 	
