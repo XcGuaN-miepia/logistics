@@ -11,7 +11,7 @@ import com.google.gwt.user.client.ui.Image;
 public class EyeButton extends Image{
 	
 	public EyeButton(){
-		this.setSize("0.8rem", "0.8rem");
+		this.setSize("0.6rem", "0.6rem");
 		this.setUrl("images/login/eye_false.png");
 	}
 	

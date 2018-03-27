@@ -1,5 +1,6 @@
 package cn.zzt.graduation.logistics.client.widget.input;
 
+import cn.easysw.mobileframework.client.framework.XGinjector;
 import cn.zzt.graduation.logistics.client.gin.LGinjector;
 
 import com.google.gwt.user.client.Window;
@@ -19,17 +20,15 @@ public class PhoneNoInput extends AbstractBaseInput{
 		super();
 		image.setUrl("images/login/Mobile-phone.png");
 		setType("tel");
-		setPlaceHolder(LGinjector.INSTANCE.getLMessages().PhoneNoInputPlaceHolder());
-//		setPlaceHolder("请输入手机号码");
-		
+		setPlaceHolder(LGinjector.INSTANCE.getLMessages().phoneNoInputPlaceHolder());
 	}
 	@Override
 	public boolean valid() {
 		if(input.getValue().isEmpty()){
-			Window.alert(LGinjector.INSTANCE.getLMessages().PhoneNoInputPlaceHolder());
+			XGinjector.INSTANCE.getToast().show(LGinjector.INSTANCE.getLMessages().phoneNoInputPlaceHolder(), null);
 			return false;
 		}else if(!input.getValue().matches(PHONE_REG)){
-			Window.alert(LGinjector.INSTANCE.getLMessages().PhoneNoLengthError());
+			XGinjector.INSTANCE.getToast().show(LGinjector.INSTANCE.getLMessages().phoneNoLengthError(), null);
 			return false;
 		}
 		return true;
