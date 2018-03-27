@@ -4,25 +4,36 @@ import cn.easysw.mobileframework.client.framework.AppView;
 import cn.easysw.mobileframework.client.framework.IBizDriver;
 import cn.easysw.mobileframework.client.framework.IViewPresenter;
 import cn.xiaobu.web.citybeauty.client.framework.OKCityAbsPageV2;
+import cn.zzt.graduation.logistics.client.biz.MyBizDriver;
+import cn.zzt.graduation.logistics.client.gin.LGinjector;
+import cn.zzt.graduation.logistics.client.view.my.MyView;
 
 /**
- * 物流列表 
- *
- * @author 周张涛
- * @version 2018年3月14日上午11:09:38
+ * 我的页面
+ * 
+ * @author zhangtao.zhou
+ * @version 2018年3月19日上午9:39:38
  */
-public class LogisticsList extends PlaceBindAbsPage{
-
+public class My extends PlaceBindAbsPage{
+	
+	private MyView myView;
+	private MyBizDriver myBizDriver;
+	
+	public My() {
+		myView=LGinjector.INSTANCE.getMyView();
+		myBizDriver=LGinjector.INSTANCE.getMyBizDriver();
+	}
+	
 	@Override
 	public IBizDriver getBizDriver() {
 		// TODO Auto-generated method stub
-		return null;
+		return myBizDriver;
 	}
 
 	@Override
 	public AppView getUI() {
 		// TODO Auto-generated method stub
-		return null;
+		return myView;
 	}
 
 	@Override
@@ -32,3 +43,4 @@ public class LogisticsList extends PlaceBindAbsPage{
 	}
 
 }
+

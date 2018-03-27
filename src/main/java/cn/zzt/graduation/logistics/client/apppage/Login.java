@@ -11,7 +11,7 @@ import cn.zzt.graduation.logistics.client.view.login.LoginView;
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
-public class Login extends OKCityAbsPageV2 {
+public class Login extends PlaceBindAbsPage {
 	
 	private LoginBizDriver loginBizDriver;
 	private LoginView loginView;
@@ -34,12 +34,5 @@ public class Login extends OKCityAbsPageV2 {
 	public IViewPresenter getViewPresenter() {
 		return loginBizDriver;
 	}
-
-	@Override
-	public void init() {
-		// TODO Auto-generated method stub
-		
-	}
-
  
 }
