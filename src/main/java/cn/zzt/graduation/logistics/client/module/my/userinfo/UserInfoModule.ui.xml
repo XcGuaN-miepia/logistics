@@ -1,0 +1,38 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+	.mainfp {
+		width: 10rem;
+		height: 5.866666666666666rem;
+		background: rgba(27, 126, 203, 1);
+	}
+	
+	.headimg {
+		width: 1.8666666666666667rem;
+		height: 1.8666666666666667rem;
+		border-radius: 50%;
+		margin-top: 1.6rem;
+	}
+	
+	.namehtml {
+		margin-top: 0.3466666666666667rem;
+		color: #FFF;
+	}
+	
+	.phonehtml {
+		margin-top: 0.26666666666666666rem;
+		color: RGBA(255, 255, 255, 0.6)
+	}
+	</ui:style>
+
+	<ui:with type="cn.easysw.mobileframework.client.theme.XBFlexAppearance"
+		field="flex"></ui:with>
+
+	<g:FlowPanel addStyleNames="{flex.css.flexV},{flex.css.flexVC},{style.mainfp}">
+		<g:Image ui:field="headimg" addStyleNames="{style.headimg}"
+			url="images/my/head_def.png" />
+		<g:HTML ui:field="namehtml" addStyleNames="fontsize34,{style.namehtml}" />
+		<g:HTML ui:field="phonehtml" addStyleNames="fontsize20,{style.phonehtml}" />
+	</g:FlowPanel>
+</ui:UiBinder> 
