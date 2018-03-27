@@ -14,15 +14,20 @@ public interface LMessages extends Messages{
 	
 	//登录模块提示
 	@DefaultMessage("请输入手机号码")
-	String PhoneNoInputPlaceHolder();
+	String phoneNoInputPlaceHolder();
 	
 	@DefaultMessage("手机号码格式错误")
-	String PhoneNoLengthError();
+	String phoneNoLengthError();
 
 	@DefaultMessage("请输入密码")
-	String PwdInputPlaceHolder();
+	String pwdInputPlaceHolder();
 	
 	@DefaultMessage("密码不能包含空格")
-	String PwdCanNotBlank();
-
+	String pwdCanNotBlank();
+	
+	@DefaultMessage("请输入账号")
+	String userNameNoInpuPlaceHolder();
+	
+	@DefaultMessage("账号不能包含空格")
+	String userNameCanNotBlank();
 }
