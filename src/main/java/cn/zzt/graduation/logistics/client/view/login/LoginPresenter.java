@@ -14,10 +14,10 @@ public interface LoginPresenter extends IViewPresenter{
 	 * 
 	 * @author zhangtao.zhou
 	 * @version 2018年1月23日 上午10:07:44 
-	 * @param tel
+	 * @param username
 	 * @param pw
 	 */
-	void login(String tel,String pw);
+	void login(String tel,String pw,int type);
 	
 
 }

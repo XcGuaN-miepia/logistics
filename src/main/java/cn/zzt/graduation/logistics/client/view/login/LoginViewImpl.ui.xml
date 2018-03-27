@@ -13,7 +13,6 @@
 		border: none;
 		border-radius: 0.106667rem;
 		margin-top: 1.466667rem;
-		font-size: 32px;
 		background: #63B8FF;
 	}
 	</ui:style>
@@ -27,7 +26,9 @@
 			addStyleNames="{style.input}" />
 		<widget:input.PasswordInput ui:field="pwdInput"
 			eyeVisible="true" addStyleNames="{style.input}" />
-		<g:Button ui:field="login" text="登录" addStyleNames="{style.btn}"/>
+		<g:Button ui:field="login" text="登录" addStyleNames="fontsize28,{style.btn}"/>
+		
+		<g:Button ui:field="change" text="切换用户"/>
 		
 	</g:FlowPanel>
 
