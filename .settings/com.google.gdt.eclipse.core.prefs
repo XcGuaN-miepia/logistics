@@ -1,6 +1,6 @@
 eclipse.preferences.version=1
 jarsExcludedFromWebInfLib=
-lastWarOutDir=C\:/Users/\u5468\u5F20\u6D9B/git/logistics/war
+lastWarOutDir=C\:/Users/\u5468\u5F20\u6D9B/git/logistics/target/logistics-0.0.1-SNAPSHOT
 launchConfigExternalUrlPrefix=
 warSrcDir=src/main/webapp
 warSrcDirIsOutput=false

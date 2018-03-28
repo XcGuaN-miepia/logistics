@@ -11,7 +11,8 @@
 	<properties>
 		<!-- Convenience property to set the GWT version -->
 		<gwtVersion>2.7.0</gwtVersion>
-
+		<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- GWT needs at least java 1.6 -->
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
@@ -75,14 +76,17 @@
 					<execution>
 						<goals>
 							<goal>compile</goal>
-							<goal>test</goal>
-							<goal>generateAsync</goal>
+							<!-- <goal>test</goal> <goal>generateAsync</goal> -->
 						</goals>
 					</execution>
 				</executions>
 				<!-- Plugin configuration. There are many available options, see gwt-maven-plugin 
 					documentation at codehaus.org -->
 				<configuration>
+					<runTarget>my.html</runTarget>
+					<modules>
+						<module>cn.zzt.graduation.logistics.My</module>
+					</modules>
 					<runTarget>Login.html</runTarget>
 					<modules>
 						<module>cn.zzt.graduation.logistics.Login</module>
@@ -91,6 +95,7 @@
 			</plugin>
 		</plugins>
 	</build>
+
 
 	<packaging>war</packaging>
 </project>

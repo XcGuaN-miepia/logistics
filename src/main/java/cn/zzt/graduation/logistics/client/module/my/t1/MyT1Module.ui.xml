@@ -1,0 +1,61 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:lmmt="urn:import:cn.zzt.graduation.logistics.client.module.my.t1"
+	xmlns:bw="urn:import:cn.zzt.graduation.logistics.client.widget.button">
+	<ui:style>
+	.mainpanel {
+		height: 3.333333rem;
+		width: 9.2rem;
+		background: #fff;
+		padding: 0rem 0.4rem;
+	}
+	
+	.tabpanel {
+		height: 1.066667rem;
+		border-bottom: 0.5px solid #ddd;
+	}
+	
+	[data-dpr="1"] .tabpanel {
+		border-bottom: 1px solid #ddd;
+	}
+	
+	.tabhtml {
+		text-align: center;
+	}
+	
+	.allorderpanel {
+		color: #ccc;
+	}
+	
+	.arrow {
+		margin-left: 0.133333rem;
+	}
+	
+	.orderpanel {
+		height: 2.266667rem;
+		color: #666;
+	}
+	</ui:style>
+	<ui:with type="cn.easysw.mobileframework.client.theme.XBFlexAppearance"
+		field="flex"></ui:with>
+	<g:FlowPanel addStyleNames="{style.mainpanel}">
+		<g:FlowPanel
+			addStyleNames="fontsize24,{style.tabpanel},{flex.css.flexH},{flex.css.flexVC},{flex.css.flexHSB}"
+			ui:field="orderfp">
+			<g:HTML text="我的订单" addStyleNames="{style.tabhtml}" />
+			<g:FlowPanel addStyleNames="{flex.css.flexH},{flex.css.flexVC}">
+				<g:HTML text="所有订单" addStyleNames="{style.allorderpanel}" />
+				<bw:MoreIcon addStyleNames="{style.arrow}"
+					iconSize="24" />
+			</g:FlowPanel>
+		</g:FlowPanel>
+
+		<g:FlowPanel addStyleNames="fontsize22,{style.orderpanel},{flex.css.flexH},{flex.css.flexVC}">
+			<lmmt:OrderEntryModule ui:field="todelivery" entryType="TO_DELIVERY" entryText="待发货" addStyleNames="{flex.css.flex1}"/>
+			<lmmt:OrderEntryModule ui:field="toreceive" entryType="TO_RECEIVE" entryText="已发货" addStyleNames="{flex.css.flex1}"/>
+			<lmmt:OrderEntryModule ui:field="toarrive" entryType="TO_ARRIVE" entryText="已签收" addStyleNames="{flex.css.flex1}"/>
+			<lmmt:OrderEntryModule ui:field="tocomment" entryType="TO_COMMENT" entryText="待评价" addStyleNames="{flex.css.flex1}"/>
+			<lmmt:OrderEntryModule ui:field="service" entryType="SERVICE" entryText="服务" addStyleNames="{flex.css.flex1}"/>
+		</g:FlowPanel>
+	</g:FlowPanel>
+</ui:UiBinder> 

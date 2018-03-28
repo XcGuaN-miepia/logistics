@@ -20,6 +20,7 @@
 7、在浏览器按F12进入开发者工具中选择手机尺寸浏览报错
 	清除一下浏览器的缓存即可修复
 	更改：关闭浏览器重新进入即可
+	再更改：重新安装浏览器即可
 	
 8、[WARN] 404 - GET /Invite/Invite.nocache.js (127.0.0.1) 1389 bytes
 	排除.gwt.xml文件错误，正在检验是否因为在Invite.java文件中忘记public Invite(){}的原因
