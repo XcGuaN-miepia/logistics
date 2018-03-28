@@ -34,5 +34,9 @@ public class Login extends PlaceBindAbsPage {
 	public IViewPresenter getViewPresenter() {
 		return loginBizDriver;
 	}
+	@Override
+	public String getPageBgColor() {
+		return WHITE_BGCOLOR;
+	}
  
 }

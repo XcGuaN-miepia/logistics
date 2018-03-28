@@ -3,7 +3,9 @@ package cn.zzt.graduation.logistics.client.biz;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.HandlerRegistration;
 
+import cn.easysw.mobileframework.client.framework.ISessionBean.FlushCallBack;
 import cn.xiaobu.web.citybeauty.client.framework.BizDriverAbsImpl;
+import cn.zzt.graduation.logistics.client.gin.LGinjector;
 import cn.zzt.graduation.logistics.client.view.my.MyView;
 
 /**
@@ -26,6 +28,19 @@ public class MyBizDriver extends BizDriverAbsImpl{
 	@Override
 	public void dispath() {
 		myView.resetUserInfo();
+	}
+
+	@Override
+	public void flushCache(final InitCallBack callBack) {
+		LGinjector.INSTANCE.getUserBean().flush(new FlushCallBack(){
+
+			@Override
+			public void onSuccess() {
+				if(callBack!=null)
+					callBack.onSuccess();
+			}
+			
+		});
 	}
 
 }

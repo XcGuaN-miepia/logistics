@@ -2,6 +2,7 @@ package cn.zzt.graduation.logistics.client.apppage;
 
 import cn.xiaobu.web.citybeauty.client.framework.OKCityAbsPageV2;
 import cn.zzt.graduation.logistics.client.gin.LGinjector;
+import cn.zzt.graduation.logistics.client.mvp.HistoryMapper;
 import cn.zzt.graduation.logistics.client.mvp.PlaceFactory;
 
 /**
@@ -13,13 +14,16 @@ import cn.zzt.graduation.logistics.client.mvp.PlaceFactory;
 public abstract class PlaceBindAbsPage extends OKCityAbsPageV2{
 
 	@Override
-	public String getPageBgColor() {
-		return GRAY_BGCOLOR;
+	public void init() {
+		final PlaceFactory factory = LGinjector.INSTANCE.getPlaceFactory();
+		final HistoryMapper historyMapper = LGinjector.INSTANCE.getHistoryMapper();
+		historyMapper.setFactory(factory);
 	}
 
 	@Override
-	public void init() {
-		final PlaceFactory factory = LGinjector.INSTANCE.getPlaceFactory();
+	public String getPageBgColor() {
+		// TODO Auto-generated method stub
+		return GRAY_BGCOLOR;
 	}
 
 	

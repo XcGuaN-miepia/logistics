@@ -1,10 +1,11 @@
 package cn.zzt.graduation.logistics.client.module.my.userinfo;
 
-import cn.easysw.mobileframework.client.framework.UserBean;
 import cn.easysw.mobileframework.client.framework.XGinjector;
 import cn.easysw.mobileframework.client.plugin.camera.CameraCallBack;
 import cn.easysw.mobileframework.client.plugin2.system.PhotoPluginHandler;
 import cn.easysw.mobileframework.client.util.StringUtils;
+import cn.zzt.graduation.logistics.client.gin.LGinjector;
+import cn.zzt.graduation.logistics.client.util.UserBean;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -32,7 +33,7 @@ public class UserInfoModule extends Composite {
 			.create(UserInfoModuleUiBinder.class);
 
 	private boolean isLogin = false;
-	UserBean userBean=XGinjector.INSTANCE.getUserBean();
+	UserBean userBean=LGinjector.INSTANCE.getUserBean();
 
 	interface UserInfoModuleUiBinder extends UiBinder<Widget, UserInfoModule> {
 	}

@@ -5,8 +5,10 @@ import cn.zzt.graduation.logistics.client.biz.LoginBizDriver;
 import cn.zzt.graduation.logistics.client.biz.LogisticsListBizDriver;
 import cn.zzt.graduation.logistics.client.biz.MyBizDriver;
 import cn.zzt.graduation.logistics.client.messages.LMessages;
+import cn.zzt.graduation.logistics.client.mvp.HistoryMapper;
 import cn.zzt.graduation.logistics.client.mvp.PlaceFactory;
 import cn.zzt.graduation.logistics.client.theme.FlexAppearance;
+import cn.zzt.graduation.logistics.client.util.UserBean;
 import cn.zzt.graduation.logistics.client.view.login.LoginView;
 import cn.zzt.graduation.logistics.client.view.logisticslist.LogisticsListView;
 import cn.zzt.graduation.logistics.client.view.my.MyView;
@@ -36,6 +38,8 @@ public interface LGinjector extends Ginjector{
 	
 	LMessages getLMessages();
 	PlaceFactory getPlaceFactory();
+	HistoryMapper getHistoryMapper();
+	UserBean getUserBean();
 	
 	
 }

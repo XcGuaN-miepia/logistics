@@ -5,7 +5,9 @@ import cn.zzt.graduation.logistics.client.biz.LoginBizDriver;
 import cn.zzt.graduation.logistics.client.biz.LogisticsListBizDriver;
 import cn.zzt.graduation.logistics.client.biz.MyBizDriver;
 import cn.zzt.graduation.logistics.client.messages.LMessages;
+import cn.zzt.graduation.logistics.client.mvp.HistoryMapper;
 import cn.zzt.graduation.logistics.client.mvp.PlaceFactory;
+import cn.zzt.graduation.logistics.client.util.UserBean;
 import cn.zzt.graduation.logistics.client.view.login.LoginView;
 import cn.zzt.graduation.logistics.client.view.login.LoginViewImpl;
 import cn.zzt.graduation.logistics.client.view.logisticslist.LogisticsListView;
@@ -38,6 +40,8 @@ public class LGinModule extends AbstractGinModule{
 		
 		bind(LMessages.class).in(Singleton.class);
 		bind(PlaceFactory.class).in(Singleton.class);
+		bind(HistoryMapper.class).in(Singleton.class);
+		bind(UserBean.class).in(Singleton.class);
 		
 		
 	}

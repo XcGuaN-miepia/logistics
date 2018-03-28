@@ -3,8 +3,8 @@
 	<inherits name='com.google.gwt.user.User' />
 	<inherits name="cn.xiaobu.web.citybeauty.beauty" />
 	<inherits name="com.google.gwt.i18n.I18N" />
-	<inherits name='com.google.gwt.user.theme.standard.Standard' />
 	<inherits name='cn.zzt.graduation.logistics.client.theme.Flex'></inherits>
+	<inherits name='cn.zzt.graduation.logistics.client.moduleload.ModuleLoad'></inherits>
 
 	<set-property name="gwt.logging.enabled" value="FALSE" />
 

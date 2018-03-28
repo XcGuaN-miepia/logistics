@@ -62,6 +62,7 @@ public class LoginViewImpl extends Composite implements LoginView{
 
 	public LoginViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
+		change.setVisible(false);
 	}
 
 	@Override
