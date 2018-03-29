@@ -12,6 +12,7 @@
 			ui:field="userinfo" />
 		<module:my.t1.MyT1Module ui:field="t1module"
 			addStyleNames="{style.margintop}" />
+		<module:my.t2.MyT2Module addStyleNames="{style.margintop}"/>
 	</g:FlowPanel>
 
 </ui:UiBinder> 

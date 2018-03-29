@@ -1,5 +1,6 @@
 package cn.zzt.graduation.logistics.client.mvp;
 
+import cn.zzt.graduation.logistics.client.place.LoginPlace;
 import cn.zzt.graduation.logistics.client.place.MyPlace;
 
 import com.google.inject.Inject;
@@ -25,5 +26,18 @@ public class PlaceFactory {
 	public MyPlace.Tokenizer getMyPlaceTokenizer() {
 		return myTokenizer;
 	}
-}
 
+	@Inject
+	LoginPlace.Tokenizer loginTokenizer;
+
+	@Inject
+	Provider<LoginPlace> loginProvider;
+
+	public LoginPlace getLoginPlace(){
+		return loginProvider.get();
+	}
+	
+	public LoginPlace.Tokenizer getLoginPlaceTokenizer(){
+		return loginTokenizer;
+	}
+}

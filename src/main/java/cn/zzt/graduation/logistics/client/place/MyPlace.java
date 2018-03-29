@@ -7,6 +7,8 @@ import com.google.inject.Provider;
 
 import cn.easysw.mobileframework.client.mvp.ActivityPlace;
 import cn.easysw.mobileframework.client.mvp.place.AppModule;
+import cn.easysw.mobileframework.client.mvp.place.RefreshVisible;
+import cn.easysw.mobileframework.client.mvp.place.ToolBarInvisible;
 
 /**
  * 我的页面地址
@@ -17,8 +19,8 @@ import cn.easysw.mobileframework.client.mvp.place.AppModule;
 public class MyPlace extends ActivityPlace{
 	@AppModule("module=app&page=my")
 	@Prefix("my")
-//	@RefreshVisible
-//	@ToolBarInvisible
+	@RefreshVisible	
+	@ToolBarInvisible
 	public static class Tokenizer implements PlaceTokenizer<MyPlace> {
 
 		private final Provider<MyPlace> placeProvider;

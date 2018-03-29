@@ -29,7 +29,7 @@
 	<ui:with type="cn.easysw.mobileframework.client.theme.XBFlexAppearance"
 		field="flex"></ui:with>
 
-	<g:FlowPanel addStyleNames="{flex.css.flexV},{flex.css.flexVC},{style.mainfp}">
+	<g:FlowPanel ui:field="mainfp" addStyleNames="{flex.css.flexV},{flex.css.flexVC},{style.mainfp}">
 		<g:Image ui:field="headimg" addStyleNames="{style.headimg}"
 			url="images/my/head_def.png" />
 		<g:HTML ui:field="namehtml" addStyleNames="fontsize34,{style.namehtml}" />
