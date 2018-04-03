@@ -1,0 +1,29 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:lm="urn:import:cn.zzt.graduation.logistics.client.module.setting">
+
+
+	<ui:style>
+	.entry {
+		background: #fff;
+		padding: 0 0.4rem;
+	}
+	
+	.logout {
+		position: absolute;
+		left: 0.4rem;
+		right: 0.4rem;
+		bottom: 0.8rem;
+		width: 9.2rem;
+		height: 1.066667rem;
+		background: #fff;
+		border: none;
+		border-radius: 0.106667rem;
+	}
+	</ui:style>
+	<g:FlowPanel>
+		<lm:SettingModule ui:field="entry" styleName="{style.entry}" />
+		<g:Button text="退出登录" addStyleNames="fontsize28 {style.logout}"
+			ui:field="logout" visible="false" />
+	</g:FlowPanel>
+</ui:UiBinder> 

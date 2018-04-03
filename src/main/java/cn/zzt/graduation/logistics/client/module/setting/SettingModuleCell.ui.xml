@@ -1,0 +1,26 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:cb="urn:import:cn.xiaobu.web.citybeauty.client.widget.button">
+	<ui:style>
+	.mainpanel {
+		height: 1.2rem;
+		background: #fff;
+		color: #333;
+		border-bottom: 0.5px solid #ddd;
+	}
+	
+	[data-dpr="1"] .mainpanel {
+		border-bottom: 1px solid #ddd;
+	}
+	</ui:style>
+
+	<ui:with field="flex"
+		type="cn.easysw.mobileframework.client.theme.XBFlexAppearance" />
+
+	<g:FlowPanel addStyleNames="{style.mainpanel},{flex.css.flexH},{flex.css.flexVC}"
+		ui:field="mainpanel">
+		<g:HTML ui:field="text" addStyleNames="fontsize28 {flex.css.flex1}" />
+		<cb:XBRightArrowButton />
+	</g:FlowPanel>
+
+</ui:UiBinder> 

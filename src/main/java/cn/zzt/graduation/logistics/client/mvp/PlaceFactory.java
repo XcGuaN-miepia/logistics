@@ -1,5 +1,6 @@
 package cn.zzt.graduation.logistics.client.mvp;
 
+import cn.zzt.graduation.logistics.client.place.AboutUsPlace;
 import cn.zzt.graduation.logistics.client.place.LoginPlace;
 import cn.zzt.graduation.logistics.client.place.MyPlace;
 import cn.zzt.graduation.logistics.client.place.RegisterPlace;
@@ -56,4 +57,18 @@ public class PlaceFactory {
 	public RegisterPlace.Tokenizer getRegisterPlaceTokenizer(){
 		return registerTokenizer;
 	}
+	
+	@Inject
+	AboutUsPlace.Tokenizer aboutusTokenizer;
+
+	@Inject
+	Provider<AboutUsPlace> aboutusProvider;
+
+	public AboutUsPlace getAboutusPlace(){
+		return aboutusProvider.get();
+	}
+	
+	public AboutUsPlace.Tokenizer getAboutUsPlaceTokenizer(){
+		return aboutusTokenizer;
+	}	
 }
