@@ -20,13 +20,12 @@
 	
 
 	<g:FlowPanel addStyleNames="{appearance.css.flexV},{appearance.css.flexVC}">
-		<widget:titlebar.TitleBar rightText="注册"
-			titleText="注册页面" />
 		<widget:input.PhoneNoInput ui:field="telInput"
 			addStyleNames="{style.input}" />
 		<widget:input.PasswordInput ui:field="pwdInput"
 			eyeVisible="true" addStyleNames="{style.input}" />
 		<g:Button ui:field="login" text="登录" addStyleNames="fontsize28,{style.btn}"/>
+		<g:Button ui:field="register" text="注册" addStyleNames="fontsize28,{style.btn}"/>
 		
 		<g:Button ui:field="change" text="切换用户"/>
 		

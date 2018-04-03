@@ -19,7 +19,6 @@ import cn.easysw.mobileframework.client.mvp.place.ToolBarInvisible;
 public class MyPlace extends ActivityPlace{
 	@AppModule("module=app&page=my")
 	@Prefix("my")
-	@RefreshVisible	
 	@ToolBarInvisible
 	public static class Tokenizer implements PlaceTokenizer<MyPlace> {
 

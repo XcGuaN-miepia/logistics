@@ -15,6 +15,7 @@ import cn.zzt.graduation.logistics.client.widget.iconfont.IconFont;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.place.shared.Place;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 
@@ -56,13 +57,17 @@ public class PageEntryModule extends FlowPanel {
 
 			@Override
 			public void onClick(ClickEvent event) {
-				if (userBean.hasLogin()) {
-					XGinjector.INSTANCE.getEventBus().fireEvent(
-							new ModuleLoadEvent(place));
-				} else {
-					XGinjector.INSTANCE.getEventBus().fireEvent(
-							new ModuleLoadEvent(LGinjector.INSTANCE
-									.getPlaceFactory().getLoginPlace()));
+				if (type != PageEntryType.CUSTOM) {
+					if (userBean.hasLogin()) {
+						XGinjector.INSTANCE.getEventBus().fireEvent(
+								new ModuleLoadEvent(place));
+					} else {
+						XGinjector.INSTANCE.getEventBus().fireEvent(
+								new ModuleLoadEvent(LGinjector.INSTANCE
+										.getPlaceFactory().getLoginPlace()));
+					}
+				}else{
+					Window.Location.assign("tel://17826807136");
 				}
 			}
 		}, ClickEvent.getType());
@@ -88,31 +93,30 @@ public class PageEntryModule extends FlowPanel {
 	 * @version 2018年3月29日 上午10:59:51
 	 * @param type
 	 */
-	public void setEntryType(PageEntryType type){
-		this.type=type;
+	public void setEntryType(PageEntryType type) {
+		this.type = type;
 		switch (type) {
 		case ADDR:
-			this.iconFont=new AddrIcon();
-//			place=LGinjector.INSTANCE.getPlaceFactory().;
+			this.iconFont = new AddrIcon();
+			 place=LGinjector.INSTANCE.getPlaceFactory().getLoginPlace();
 			break;
 		case CUSTOM:
-			this.iconFont=new CustomIcon();
-//			place=LGinjector.INSTANCE.getPlaceFactory().;
+			this.iconFont = new CustomIcon();
 			break;
 		case ABOUTUS:
-			this.iconFont=new AboutUsIcon();
-//			place=LGinjector.INSTANCE.getPlaceFactory().;
+			this.iconFont = new AboutUsIcon();
+			 place=LGinjector.INSTANCE.getPlaceFactory().getLoginPlace();
 			break;
 		case SETTING:
-			this.iconFont=new SettingIcon();
-//			place=LGinjector.INSTANCE.getPlaceFactory().;
+			this.iconFont = new SettingIcon();
+			 place=LGinjector.INSTANCE.getPlaceFactory().getLoginPlace();
 			break;
 		default:
 			break;
 		}
 		init();
 	}
-	
+
 	/**
 	 * 设置类型文字
 	 * 
@@ -120,17 +124,19 @@ public class PageEntryModule extends FlowPanel {
 	 * @version 2018年3月29日 上午11:00:36
 	 * @param text
 	 */
-	public void setEntryText(String text){
+	public void setEntryText(String text) {
 		textHTML = new HTML();
 		textHTML.setText(text);
-		textHTML.getElement().getStyle().setProperty("marginLeft", CordovaUtils.px2(36) + "px");
-		textHTML.getElement().getStyle().setProperty("fontSize", StyleUtils.getFontSizeByDpr2(28));
+		textHTML.getElement().getStyle()
+				.setProperty("marginLeft", CordovaUtils.px2(36) + "px");
+		textHTML.getElement().getStyle()
+				.setProperty("fontSize", StyleUtils.getFontSizeByDpr2(28));
 
 		init();
 	}
-	
-	private void init(){
-		if (iconFont !=null&&textHTML!=null){
+
+	private void init() {
+		if (iconFont != null && textHTML != null) {
 			this.add(iconFont);
 			this.add(textHTML);
 		}

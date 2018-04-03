@@ -40,7 +40,7 @@ public class OrderEntryModule extends FlowPanel{
 		this.getElement().getStyle().setProperty("marginTop", CordovaUtils.px2(40) + "px");
 
 		iconFont = new IconFont();
-		iconFont.setIconSize(44);
+		iconFont.setIconSize(30);
 		iconFont.getElement().getStyle().setColor("#666");
 
 		textHTML = new HTML();

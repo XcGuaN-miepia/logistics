@@ -83,13 +83,11 @@
 				<!-- Plugin configuration. There are many available options, see gwt-maven-plugin 
 					documentation at codehaus.org -->
 				<configuration>
-<!-- 					<runTarget>my.html</runTarget>
- -->					<modules>
+					<!-- <runTarget>my.html</runTarget> -->
+					<modules>
 						<module>cn.zzt.graduation.logistics.My</module>
-					</modules>
-<!-- 					<runTarget>Login.html</runTarget>
- -->					<modules>
 						<module>cn.zzt.graduation.logistics.Login</module>
+						<module>cn.zzt.graduation.logistics.Register</module>
 					</modules>
 				</configuration>
 			</plugin>

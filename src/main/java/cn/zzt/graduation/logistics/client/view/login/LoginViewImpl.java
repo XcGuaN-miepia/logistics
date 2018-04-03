@@ -2,6 +2,8 @@ package cn.zzt.graduation.logistics.client.view.login;
 
 import cn.easysw.mobileframework.client.framework.IViewPresenter;
 import cn.easysw.mobileframework.client.framework.XGinjector;
+import cn.easysw.mobileframework.client.framework.event.ModuleLoadEvent;
+import cn.zzt.graduation.logistics.client.gin.LGinjector;
 import cn.zzt.graduation.logistics.client.widget.input.PasswordInput;
 import cn.zzt.graduation.logistics.client.widget.input.PhoneNoInput;
 
@@ -29,7 +31,7 @@ public class LoginViewImpl extends Composite implements LoginView{
 	}
 	
 	@UiField
-	Button login,change;
+	Button login,change,register;
 	@UiField
 	PhoneNoInput telInput;
 	@UiField
@@ -60,6 +62,10 @@ public class LoginViewImpl extends Composite implements LoginView{
 		}
 	}
 
+	@UiHandler("register")
+	void addRegisterHandler(ClickEvent event){
+		XGinjector.INSTANCE.getEventBus().fireEvent(new ModuleLoadEvent(LGinjector.INSTANCE.getPlaceFactory().getRegisterPlace()));
+	}
 	public LoginViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
 		change.setVisible(false);
