@@ -24,6 +24,6 @@
 	<g:FlowPanel>
 		<lm:SettingModule ui:field="entry" styleName="{style.entry}" />
 		<g:Button text="退出登录" addStyleNames="fontsize28 {style.logout}"
-			ui:field="logout" visible="false" />
+			ui:field="logout" visible="true" />
 	</g:FlowPanel>
 </ui:UiBinder> 

@@ -109,7 +109,7 @@ public class PageEntryModule extends FlowPanel {
 			break;
 		case SETTING:
 			this.iconFont = new SettingIcon();
-			 place=LGinjector.INSTANCE.getPlaceFactory().getLoginPlace();
+			 place=LGinjector.INSTANCE.getPlaceFactory().getSettingPlace();
 			break;
 		default:
 			break;

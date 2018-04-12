@@ -5,6 +5,7 @@ import cn.zzt.graduation.logistics.client.biz.LoginBizDriver;
 import cn.zzt.graduation.logistics.client.biz.LogisticsListBizDriver;
 import cn.zzt.graduation.logistics.client.biz.MyBizDriver;
 import cn.zzt.graduation.logistics.client.biz.RegisterBizDriver;
+import cn.zzt.graduation.logistics.client.biz.SettingBizDriver;
 import cn.zzt.graduation.logistics.client.messages.LMessages;
 import cn.zzt.graduation.logistics.client.mvp.HistoryMapper;
 import cn.zzt.graduation.logistics.client.mvp.PlaceFactory;
@@ -14,6 +15,7 @@ import cn.zzt.graduation.logistics.client.view.login.LoginView;
 import cn.zzt.graduation.logistics.client.view.logisticslist.LogisticsListView;
 import cn.zzt.graduation.logistics.client.view.my.MyView;
 import cn.zzt.graduation.logistics.client.view.register.RegisterView;
+import cn.zzt.graduation.logistics.client.view.settings.SettingView;
 
 import com.google.gwt.core.shared.GWT;
 import com.google.gwt.inject.client.GinModules;
@@ -40,6 +42,9 @@ public interface LGinjector extends Ginjector{
 	
 	RegisterView getRegisterView();
 	RegisterBizDriver getRegisterBizDriver();
+	
+	SettingView getSettingView();
+	SettingBizDriver getSettingBizDriver();
 	
 	LMessages getLMessages();
 	PlaceFactory getPlaceFactory();

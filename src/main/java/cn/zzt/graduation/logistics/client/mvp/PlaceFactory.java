@@ -4,6 +4,7 @@ import cn.zzt.graduation.logistics.client.place.AboutUsPlace;
 import cn.zzt.graduation.logistics.client.place.LoginPlace;
 import cn.zzt.graduation.logistics.client.place.MyPlace;
 import cn.zzt.graduation.logistics.client.place.RegisterPlace;
+import cn.zzt.graduation.logistics.client.place.SettingPlace;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
@@ -70,5 +71,19 @@ public class PlaceFactory {
 	
 	public AboutUsPlace.Tokenizer getAboutUsPlaceTokenizer(){
 		return aboutusTokenizer;
+	}	
+	
+	@Inject
+	SettingPlace.Tokenizer settingTokenizer;
+
+	@Inject
+	Provider<SettingPlace> settingProvider;
+
+	public SettingPlace getSettingPlace(){
+		return settingProvider.get();
+	}
+	
+	public SettingPlace.Tokenizer getSettingPlaceTokenizer(){
+		return settingTokenizer;
 	}	
 }

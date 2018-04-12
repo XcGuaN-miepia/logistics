@@ -5,6 +5,7 @@ import cn.zzt.graduation.logistics.client.biz.LoginBizDriver;
 import cn.zzt.graduation.logistics.client.biz.LogisticsListBizDriver;
 import cn.zzt.graduation.logistics.client.biz.MyBizDriver;
 import cn.zzt.graduation.logistics.client.biz.RegisterBizDriver;
+import cn.zzt.graduation.logistics.client.biz.SettingBizDriver;
 import cn.zzt.graduation.logistics.client.messages.LMessages;
 import cn.zzt.graduation.logistics.client.mvp.HistoryMapper;
 import cn.zzt.graduation.logistics.client.mvp.PlaceFactory;
@@ -17,6 +18,8 @@ import cn.zzt.graduation.logistics.client.view.my.MyView;
 import cn.zzt.graduation.logistics.client.view.my.MyViewImpl;
 import cn.zzt.graduation.logistics.client.view.register.RegisterView;
 import cn.zzt.graduation.logistics.client.view.register.RegisterViewImpl;
+import cn.zzt.graduation.logistics.client.view.settings.SettingView;
+import cn.zzt.graduation.logistics.client.view.settings.SettingViewImpl;
 
 import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.inject.Singleton;
@@ -43,6 +46,9 @@ public class LGinModule extends AbstractGinModule{
 		
 		bind(RegisterView.class).to(RegisterViewImpl.class).in(Singleton.class);
 		bind(RegisterBizDriver.class).in(Singleton.class);
+		
+		bind(SettingView.class).to(SettingViewImpl.class).in(Singleton.class);
+		bind(SettingBizDriver.class).in(Singleton.class);
 		
 		bind(LMessages.class).in(Singleton.class);
 		bind(PlaceFactory.class).in(Singleton.class);
