@@ -85,9 +85,12 @@
 				<configuration>
 					<!-- <runTarget>my.html</runTarget> -->
 					<modules>
-						<module>cn.zzt.graduation.logistics.My</module>
+ 						<module>cn.zzt.graduation.logistics.My</module>
 						<module>cn.zzt.graduation.logistics.Login</module>
 						<module>cn.zzt.graduation.logistics.Register</module>
+						<module>cn.zzt.graduation.logistics.setting</module>
+						<module>cn.zzt.graduation.logistics.aboutus</module>
+						<module>cn.zzt.graduation.logistics.modifypassword</module>
 					</modules>
 				</configuration>
 			</plugin>

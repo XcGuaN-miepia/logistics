@@ -6,10 +6,12 @@ import cn.easysw.mobileframework.client.framework.event.ToastEvent;
 import cn.easysw.mobileframework.client.framework.event.ToastEvent.TOAST_LEVEL;
 import cn.easysw.mobileframework.client.plugin2.PluginDefaultHandler;
 import cn.easysw.mobileframework.client.plugin2.ui.IUIPlugin.ConfirmDialogCallBack;
+import cn.zzt.graduation.logistics.client.gin.LGinjector;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.place.shared.Place;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.FlowPanel;
 
 /**
@@ -28,7 +30,7 @@ public class SettingModule extends FlowPanel{
 	public enum SETTINGS_ENTER {
 //		ABOUT_US, // 关于我们
 //		FEED_BACK, // 问题反馈
-//		MODIFY_LOGIN_PWD, // 修改登录密码
+		MODIFY_LOGIN_PWD, // 修改登录密码
 //		SETTING_LOGIN_PWD, // 设置登录密码
 		CLEAR_CACHE; // 清除缓存
 	}
@@ -50,7 +52,7 @@ public class SettingModule extends FlowPanel{
 		cell.addDomHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-//				goToEntry(type);
+				goToEntry(type);
 			}
 		}, ClickEvent.getType());
 	}
@@ -70,9 +72,9 @@ public class SettingModule extends FlowPanel{
 //			case FEED_BACK:
 //				go(JHXFrameGinjector.INSTANCE.getPlaceFactory().getFeedBackPlace());
 //				break;
-//			case MODIFY_LOGIN_PWD:
-//				go(JHXFrameGinjector.INSTANCE.getPlaceFactory().getModifyLoginPWDPlace());
-//				break;
+			case MODIFY_LOGIN_PWD:
+				go(LGinjector.INSTANCE.getPlaceFactory().getModifyPasswordPlace());
+				break;
 //			case SETTING_LOGIN_PWD:
 //				go(JHXFrameGinjector.INSTANCE.getPlaceFactory().getSetLoginPwdPlace());
 //				break;
@@ -105,18 +107,12 @@ public class SettingModule extends FlowPanel{
 		XGinjector.INSTANCE.getIuiPlugin().showConfirmDialog("提示", "确定要清除缓存?", new ConfirmDialogCallBack() {
 			@Override
 			public void ok() {
-
-				// 首页 小铃铛的提示缓存标记不清除
-				final boolean homeShow = !XGinjector.INSTANCE.getICache().getH5Cache("hasShowNoticeDescImg").isEmpty();
-
 				XGinjector.INSTANCE.getICache().clearH5Cache();
-				XGinjector.INSTANCE.getUserBean().updateToCache();
+				LGinjector.INSTANCE.getUserBean().updateToCache();
 				XGinjector.INSTANCE.getISystem().cleanCache(new PluginDefaultHandler() {
 
 					@Override
 					public void onPluginInvokeSuccess(String jsonStr) {
-						if (homeShow)
-							XGinjector.INSTANCE.getICache().setH5Cache("hasShowNoticeDescImg", "true");
 						XGinjector.INSTANCE.getEventBus().fireEvent(new ToastEvent(TOAST_LEVEL.INFO, "清除缓存成功", null));
 
 					}
@@ -156,6 +152,7 @@ public class SettingModule extends FlowPanel{
 //				addEntry("设置登录密码", SETTINGS_ENTER.SETTING_LOGIN_PWD);
 //
 //		}
+		addEntry("修改登录密码", SETTINGS_ENTER.MODIFY_LOGIN_PWD);
 		addEntry("清除缓存", SETTINGS_ENTER.CLEAR_CACHE);
 		cell.clearBorder();
 	}

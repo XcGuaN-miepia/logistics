@@ -3,6 +3,7 @@ package cn.zzt.graduation.logistics.client.util;
 import com.google.gwt.json.client.JSONObject;
 import com.google.gwt.json.client.JSONParser;
 import com.google.gwt.json.client.JSONString;
+import com.google.gwt.user.client.Window;
 
 import cn.easysw.mobileframework.client.framework.ISessionBean;
 import cn.easysw.mobileframework.client.framework.XGinjector;
@@ -131,8 +132,10 @@ public class UserBean implements ISessionBean {
 					.stringValue();
 		if (jo.get("PHONE") != null)
 			UserBean.this.phoneNo = jo.get("PHONE").isString().stringValue();
-		if (jo.get("SESSION") != null)
-			UserBean.this.session = jo.get("SESSION").isString().stringValue();
+		if (iCache.getH5Cache("USER_BEAN_SESSION") != null)
+			UserBean.this.session = iCache.getH5Cache("USER_BEAN_SESSION");
+		if(jo.get("SESSION")!=null)
+			UserBean.this.session=jo.get("SESSION").isString().stringValue();
 	}
 
 	public void setAddr(String addr) {

@@ -1,5 +1,6 @@
 package cn.zzt.graduation.logistics.client.biz;
 
+import com.google.gwt.user.client.Window;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.HandlerRegistration;
 

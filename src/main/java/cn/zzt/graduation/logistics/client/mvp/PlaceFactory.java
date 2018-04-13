@@ -2,6 +2,7 @@ package cn.zzt.graduation.logistics.client.mvp;
 
 import cn.zzt.graduation.logistics.client.place.AboutUsPlace;
 import cn.zzt.graduation.logistics.client.place.LoginPlace;
+import cn.zzt.graduation.logistics.client.place.ModifyPasswordPlace;
 import cn.zzt.graduation.logistics.client.place.MyPlace;
 import cn.zzt.graduation.logistics.client.place.RegisterPlace;
 import cn.zzt.graduation.logistics.client.place.SettingPlace;
@@ -85,5 +86,19 @@ public class PlaceFactory {
 	
 	public SettingPlace.Tokenizer getSettingPlaceTokenizer(){
 		return settingTokenizer;
+	}	
+	
+	@Inject
+	ModifyPasswordPlace.Tokenizer modifyPasswordTokenizer;
+
+	@Inject
+	Provider<ModifyPasswordPlace> modifyPasswordProvider;
+
+	public ModifyPasswordPlace getModifyPasswordPlace(){
+		return modifyPasswordProvider.get();
+	}
+	
+	public ModifyPasswordPlace.Tokenizer getModifyPasswordPlaceTokenizer(){
+		return modifyPasswordTokenizer;
 	}	
 }

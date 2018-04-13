@@ -44,8 +44,7 @@ public class SettingViewImpl extends Composite implements SettingView{
 
 	@Override
 	public void setViewPresenter(IViewPresenter presenter) {
-		// TODO Auto-generated method stub
-		
+		this.presenter = (SettingPresenter) presenter;
 	}
 
 	@Override

@@ -1,10 +1,13 @@
 package cn.zzt.graduation.logistics.client.biz;
 
 import com.google.gwt.user.client.Timer;
+import com.google.gwt.user.client.Window;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.HandlerRegistration;
 
 import cn.easysw.mobileframework.client.framework.XGinjector;
+import cn.easysw.mobileframework.client.framework.IBizDriver.InitCallBack;
+import cn.easysw.mobileframework.client.framework.ISessionBean.FlushCallBack;
 import cn.easysw.mobileframework.client.framework.event.ModuleLoadEvent;
 import cn.easysw.mobileframework.client.plugin2.ui.IUIPlugin.ConfirmDialogCallBack;
 import cn.xiaobu.web.citybeauty.client.framework.BizDriverAbsImpl;
@@ -59,5 +62,17 @@ public class SettingBizDriver extends BizDriverAbsImpl implements SettingPresent
 	public void dispath() {
 		settingView.initEntryModule(LGinjector.INSTANCE.getUserBean().hasLogin(), false);
 	}
+	
+	@Override
+	public void flushCache(final InitCallBack callBack) {
+		LGinjector.INSTANCE.getUserBean().flush(new FlushCallBack(){
 
+			@Override
+			public void onSuccess() {
+				if(callBack!=null)
+					callBack.onSuccess();
+			}
+			
+		});
+	}
 }
