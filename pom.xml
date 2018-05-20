@@ -59,6 +59,11 @@
 			<artifactId>citybeauty</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>cn.xiaobu.web</groupId>
+			<artifactId>city-mall</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -91,6 +96,7 @@
 						<module>cn.zzt.graduation.logistics.setting</module>
 						<module>cn.zzt.graduation.logistics.aboutus</module>
 						<module>cn.zzt.graduation.logistics.modifypassword</module>
+						<module>cn.zzt.graduation.logistics.modifyinfo</module>
 					</modules>
 				</configuration>
 			</plugin>

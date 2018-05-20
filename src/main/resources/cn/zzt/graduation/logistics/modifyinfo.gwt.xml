@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='modifyinfo'>
+	<inherits name="cn.zzt.graduation.logistics.LogisticsBase"/>
+	<entry-point class='cn.zzt.graduation.logistics.client.apppage.ModifyInfo' />
+</module>

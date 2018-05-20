@@ -1,0 +1,38 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+	.headfp {
+		width: 10rem;
+		height: 3.86666rem;
+		background:#FFF;
+	}
+	
+	.headimg {
+		width: 1.86666rem;
+		height: 1.86666rem;
+		border-radius: 50%;
+		margin-top: 0.6rem;
+	}
+	
+	.headtext{
+		color:#ccc;
+		margin-top:0.33333rem;
+	}
+	
+	.baseinput{
+		width: 750px;
+	}
+	</ui:style>
+	<ui:with type="cn.easysw.mobileframework.client.theme.XBFlexAppearance"
+		field="flex"></ui:with>
+	<g:FlowPanel>
+		<g:FlowPanel ui:field="headfp"
+			addStyleNames="{flex.css.flexV},{flex.css.flexVC},{style.headfp}">
+			<g:Image ui:field="headimg" addStyleNames="{style.headimg}" url="/images/my/head_def.png"/>
+			<g:HTML text="点击修改头像" addStyleNames="fontsize24,{style.headtext}"></g:HTML>
+		</g:FlowPanel>
+		<g:HTML ui:field="sexpicker" text="111"></g:HTML>
+		<g:HTML ui:field="datepicker"></g:HTML>
+	</g:FlowPanel>
+</ui:UiBinder> 

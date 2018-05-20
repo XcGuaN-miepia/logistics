@@ -58,28 +58,30 @@ public class UserInfoModule extends Composite {
 			}
 		}, ClickEvent.getType());
 
-//		headimg.addClickHandler(new ClickHandler() {
-//
-//			@Override
-//			public void onClick(ClickEvent event) {
-//				XGinjector.INSTANCE.getISystem().photoPicker(1,
-//						new PhotoPluginHandler() {
-//
-//							@Override
-//							public void onBizFailure() {
-//								// TODO Auto-generated method stub
-//
-//							}
-//
-//							@Override
-//							public void onPhotoSuccess(String[] imgUrls) {
-//								userBean.setIcon(String.valueOf(imgUrls));
-//								userBean.updateToCache();
-//								headimg.setUrl(userBean.getIcon());
-//							}
-//						});
-//			}
-//		});
+		headimg.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+				if (isLogin) {
+					XGinjector.INSTANCE.getISystem().photoPicker(1,
+							new PhotoPluginHandler() {
+
+								@Override
+								public void onBizFailure() {
+									// TODO Auto-generated method stub
+
+								}
+
+								@Override
+								public void onPhotoSuccess(String[] imgUrls) {
+									userBean.setIcon(String.valueOf(imgUrls));
+									userBean.updateToCache();
+									headimg.setUrl(userBean.getIcon());
+								}
+							});
+				}
+			}
+		});
 	}
 
 	protected void pushToLoginOrEditPage() {

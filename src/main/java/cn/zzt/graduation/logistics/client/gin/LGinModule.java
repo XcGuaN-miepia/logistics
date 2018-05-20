@@ -3,6 +3,7 @@ package cn.zzt.graduation.logistics.client.gin;
 
 import cn.zzt.graduation.logistics.client.biz.LoginBizDriver;
 import cn.zzt.graduation.logistics.client.biz.LogisticsListBizDriver;
+import cn.zzt.graduation.logistics.client.biz.ModifyInfoBizDriver;
 import cn.zzt.graduation.logistics.client.biz.ModifyPasswordBizDriver;
 import cn.zzt.graduation.logistics.client.biz.MyBizDriver;
 import cn.zzt.graduation.logistics.client.biz.RegisterBizDriver;
@@ -15,6 +16,8 @@ import cn.zzt.graduation.logistics.client.view.login.LoginView;
 import cn.zzt.graduation.logistics.client.view.login.LoginViewImpl;
 import cn.zzt.graduation.logistics.client.view.logisticslist.LogisticsListView;
 import cn.zzt.graduation.logistics.client.view.logisticslist.LogisticsListViewImpl;
+import cn.zzt.graduation.logistics.client.view.modifyinfo.ModifyInfoView;
+import cn.zzt.graduation.logistics.client.view.modifyinfo.ModifyInfoViewImpl;
 import cn.zzt.graduation.logistics.client.view.modifypassword.ModifyPasswordView;
 import cn.zzt.graduation.logistics.client.view.modifypassword.ModifyPasswordViewImpl;
 import cn.zzt.graduation.logistics.client.view.my.MyView;
@@ -55,6 +58,9 @@ public class LGinModule extends AbstractGinModule{
 		
 		bind(ModifyPasswordView.class).to(ModifyPasswordViewImpl.class).in(Singleton.class);
 		bind(ModifyPasswordBizDriver.class).in(Singleton.class);
+		
+		bind(ModifyInfoView.class).to(ModifyInfoViewImpl.class).in(Singleton.class);
+		bind(ModifyInfoBizDriver.class).in(Singleton.class);
 		
 		bind(LMessages.class).in(Singleton.class);
 		bind(PlaceFactory.class).in(Singleton.class);
